@@ -17,6 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  var heroHeader = document.querySelector('.site-header.header-hero');
+  if (heroHeader) {
+    var updateHeroHeader = function () {
+      heroHeader.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    updateHeroHeader();
+    window.addEventListener('scroll', updateHeroHeader, { passive: true });
+  }
+
   var form = document.getElementById('quote-form');
   var status = document.getElementById('form-status');
   if (form && status) {
